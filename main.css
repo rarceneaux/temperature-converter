@@ -1,0 +1,35 @@
+/* body{
+  background-color: deepskyblue
+}
+
+#temps{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 25px;
+}
+
+#converts{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#resultsTitle,#results{
+  display: flex;
+flex-direction:row;
+justify-content: center;
+}
+
+#btnToConvert,#clearTempInput{
+  margin:5px;
+}
+
+#tempInput{
+  margin:5px;
+}
+
+#main{
+  text-align: center;
+  margin:50px;
+} */
