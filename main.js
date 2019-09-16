@@ -6,17 +6,11 @@ const clearInput = document.getElementById('clearTempInput');
 const tempResult = document.getElementById('results');
 const resultsTag = document.getElementById('resultsTitle');
 
-
-// Print to DOM
 const PTD = (stringToPrint,divId)=> {
   const selectedDiv = document.getElementById(divId);
   selectedDiv.innerHTML = stringToPrint;
 };
 
-
-
-
-// To Celsius 
 const toCelsius = () => {
   const fahrenheitTemp = tempInput.value;
   const convertFtoC = (fahrenheitTemp - 32) * 5/9 ;
@@ -31,7 +25,6 @@ const toCelsius = () => {
   }
 };
 
-// To fahrenheit
 const toFahrenheit = () => {
   const celsiusTemp = tempInput.value;
   const convertCtoF = (celsiusTemp * 9/5) + 32;
@@ -46,8 +39,12 @@ const toFahrenheit = () => {
     }
   };
 
-// This function should determine which conversion should
-// happen based on which radio button is selected.
+temperatureInput.addEventListener('keyup',(e)=>{
+    if(e.keyCode === 13){
+      determineConverter();
+    }
+  });
+
 const determineConverter = (e) => {
   if(celRadioBtn.checked === true){
     toCelsius();
@@ -57,13 +54,11 @@ const determineConverter = (e) => {
     }
   };
 
-// add event listeners to Radio Btns
 document.getElementById('customRadio1').addEventListener('click', (e)=> {
 });
 document.getElementById('customRadio2').addEventListener('click', (e)=> {
 });
 
-// Clears value fields
   document.getElementById('clearTempInput').addEventListener('click', (e) => {
   tempInput.value = '';
   results.innerHTML = '';
@@ -71,8 +66,6 @@ document.getElementById('customRadio2').addEventListener('click', (e)=> {
   customRadio2.checked = false;
 });
 
-
-// Starts App
 const init = (e) => { 
   temperatureInput.focus();
   convertBtn.addEventListener("click", determineConverter);
