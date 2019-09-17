@@ -5,6 +5,7 @@ const farRadioBtn = document.getElementById('customRadio2').required =true;
 const clearInput = document.getElementById('clearTempInput');
 const tempResult = document.getElementById('results');
 const resultsTag = document.getElementById('resultsTitle');
+const resetBtn = document.getElementById('clearTempInput');
 
 const PTD = (stringToPrint,divId)=> {
   const selectedDiv = document.getElementById(divId);
@@ -42,32 +43,48 @@ const toFahrenheit = () => {
 temperatureInput.addEventListener('keyup',(e)=>{
     if(e.keyCode === 13){
       determineConverter();
+    } else {
+e.preventDefault();
     }
   });
 
+
+
+
 const determineConverter = (e) => {
-  if(celRadioBtn.checked === true){
-    toCelsius();
+  e.preventDefault();
+  if (temperatureInput.value === '') {
+    return 
   } else {
-    (farRadioBtn.checked === true)
-    toFahrenheit();
+    if(celRadioBtn.checked === true){
+      toCelsius();
+    } else {
+      (farRadioBtn.checked === true)
+      toFahrenheit();
+      }
     }
   };
 
-document.getElementById('customRadio1').addEventListener('click', (e)=> {
-});
-document.getElementById('customRadio2').addEventListener('click', (e)=> {
-});
 
-  document.getElementById('clearTempInput').addEventListener('click', (e) => {
-  tempInput.value = '';
-  results.innerHTML = '';
-  customRadio1.checked = false;
-  customRadio2.checked = false;
-});
+radioBtnEvents  = () => {
+celRadioBtn.addEventListener('click', (e)=> {});
+farRadioBtn.addEventListener('click', (e)=> {});
+};
+
+
+const userActions = (e) => {
+  resetBtn.addEventListener("click", (e) => {});
+  temperatureInput.value = '';
+  tempResult.innerHTML = '';
+  celRadioBtn.checked = false;
+  farRadioBtn.checked = false;
+};
+userActions();
+
 
 const init = (e) => { 
   temperatureInput.focus();
   convertBtn.addEventListener("click", determineConverter);
+  radioBtnEvents();
 };
 init();
