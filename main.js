@@ -38,7 +38,7 @@ const toFahrenheit = () => {
     }
   };
 
-const enterKey = () => { 
+const enterKey = (e) => { 
 temperatureInput.addEventListener('keyup',(e)=>{
     if(e.keyCode === 13){
       determineConverter();
@@ -66,15 +66,13 @@ resetBtn.addEventListener("click", (e) => {
   tempResult.innerHTML = '';
   celRadioBtn.checked = false;
   farRadioBtn.checked = false;
-})
+  })
 };
 otherStuff();
 
 const init = (e) => { 
   temperatureInput.focus();
   convertBtn.addEventListener("click", determineConverter);
-  celRadioBtn.checked = false;
-  farRadioBtn.checked = false;
   enterKey();
 };
 init();
