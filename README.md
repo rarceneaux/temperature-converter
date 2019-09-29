@@ -5,7 +5,7 @@
 Use this application to find out what the corresponding temperature will be if you pick Celsius and want to convert to Fahrenheit and vice versa.
 
 ## Screenshot
-![](screenshots/temp-converter.png)
+![](https://raw.githubusercontent.com/rarceneaux/temperature-converter/master/screenshots/temp-converter.png)
  
  
 ## How to Run:
